@@ -80,7 +80,7 @@ func (repository *bolaRepositoryImpl) Update(ctx context.Context, id int32, bola
 	}
 	if rows.Next() {
 		// yes
-		script := "UPDATE barang SET posisi = ?, negara = ? WHERE ID = ?"
+		script := "UPDATE bola SET posisi = ?, negara = ? WHERE ID = ?"
 		_, err := repository.DB.ExecContext(ctx, script, bola.Posisi, bola.Negara, id)
 		if err != nil {
 			return bola, err
